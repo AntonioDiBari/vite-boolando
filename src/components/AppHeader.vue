@@ -1,7 +1,14 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      sizeGenders: ["Donna", "Uomo", "Bambini"],
+      buttons: [
+        "fa-regular fa-user",
+        "fa-regular fa-heart",
+        "fa-solid fa-bag-shopping",
+      ],
+    };
   },
 };
 </script>
@@ -11,15 +18,13 @@ export default {
     <header class="header">
       <div class="container nav">
         <ul>
-          <li><a href="#">Donna</a></li>
-          <li><a href="#">Uomo</a></li>
-          <li><a href="#">Bambini</a></li>
+          <li v-for="gender in sizeGenders">
+            <a href="#">{{ gender }}</a>
+          </li>
         </ul>
         <div class="logo"><img src="/boolean-logo.png" alt="" /></div>
         <ul class="buttons">
-          <li><i class="fa-regular fa-user"></i></li>
-          <li><i class="fa-regular fa-heart"></i></li>
-          <li><i class="fa-solid fa-bag-shopping"></i></li>
+          <li v-for="button in buttons"><i :class="button"></i></li>
         </ul>
       </div>
     </header>
@@ -28,9 +33,10 @@ export default {
 
 <style scoped lang="scss">
 @use "../styles/partials/mixins" as *;
+@use "../styles/partials/variables" as *;
 .header {
   background-color: #ff6900;
-  height: 45px;
+  height: $headerHeight;
   color: white;
   position: fixed;
   left: 0;

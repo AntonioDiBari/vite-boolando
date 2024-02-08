@@ -114,10 +114,11 @@ export default {
 
 <style scoped lang="scss">
 @use "../styles/partials/mixins" as *;
+@use "../styles/partials/variables" as *;
 
 .vetrina {
-  padding-top: 45px; /* ALTEZZA HEADER */
-  margin-bottom: 45px;
+  padding-top: $headerHeight; /* ALTEZZA HEADER */
+  margin-bottom: $headerHeight;
   @include flexBetweenCenter();
   flex-wrap: wrap;
 }
@@ -157,10 +158,7 @@ export default {
   bottom: 30px;
   .sconto,
   .sostenibilita {
-    display: inline-block;
-    color: white;
-    font-size: 10px;
-    padding: 3px 7px;
+    @include badgeStructure();
   }
   .sconto {
     background-color: red;

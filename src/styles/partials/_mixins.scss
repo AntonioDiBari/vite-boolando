@@ -3,3 +3,10 @@
   justify-content: space-between;
   align-items: center;
 }
+
+@mixin badgeStructure {
+  display: inline-block;
+  color: white;
+  font-size: 10px;
+  padding: 3px 7px;
+}
