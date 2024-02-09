@@ -1,14 +1,11 @@
 <script>
 export default {
   data() {
-    return {
-      sizeGenders: ["Donna", "Uomo", "Bambini"],
-      buttons: [
-        "fa-regular fa-user",
-        "fa-regular fa-heart",
-        "fa-solid fa-bag-shopping",
-      ],
-    };
+    return {};
+  },
+  props: {
+    sizeGenders: Array,
+    buttons: Array,
   },
 };
 </script>

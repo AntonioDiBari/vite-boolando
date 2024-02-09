@@ -3,6 +3,10 @@ export default {
   data() {
     return {};
   },
+  props: {
+    footLinks: Array,
+    adsLogos: Array,
+  },
 };
 </script>
 
@@ -12,19 +16,15 @@ export default {
       <div class="info-foot">
         <span class="find-us">Booland S.r.l.</span>
         <ul class="ads">
-          <li><a href="#">Informazioni legali</a></li>
-          <li><a href="#">Informativa sulla privacy</a></li>
-          <li><a href="#">Diritto di recesso</a></li>
+          <li v-for="link in footLinks">
+            <a href="#">{{ link }}</a>
+          </li>
         </ul>
       </div>
       <div class="social">
         <span class="find-us">Trovaci anche su</span>
         <div class="ads">
-          <i class="fa-brands fa-square-twitter"></i>
-          <i class="fa-brands fa-square-facebook"></i>
-          <i class="fa-brands fa-square-instagram"></i>
-          <i class="fa-brands fa-square-pinterest"></i>
-          <i class="fa-brands fa-square-youtube"></i>
+          <i v-for="logo in adsLogos" :class="logo"></i>
         </div>
       </div>
     </section>
