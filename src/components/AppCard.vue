@@ -30,18 +30,22 @@ export default {
   <div class="cards">
     <img :src="getUrl(urlImageHover)" alt="" class="second-img" />
     <img :src="getUrl(urlImage)" alt="" class="first-img" />
-    <span class="hearts" v-if="heart"><i class="fa-solid fa-heart"></i></span>
-    <span class="hearts" v-else><i class="fa-regular fa-heart"></i></span>
+    <span class="hearts" v-if="heart"
+      ><font-awesome-icon icon="fa-solid fa-heart"
+    /></span>
+    <span class="hearts" v-else
+      ><font-awesome-icon icon="fa-regular fa-heart"
+    /></span>
     <div class="tags">
       <div v-for="badge in badges" :class="badge.type">
         {{ badge.value }}
       </div>
     </div>
     <div class="info">
-      <span class="brand">{{ brand }}</span>
-      <span class="nome">{{ nameArticle }}</span>
-      <span class="newprice">{{ newPrice }}</span>
-      <span class="oldprice" v-show="oldPrice != '0'">{{ oldPrice }}</span>
+      <div class="brand">{{ brand }}</div>
+      <div class="nome">{{ nameArticle }}</div>
+      <div class="newprice me-1">{{ newPrice }}</div>
+      <div class="oldprice" v-show="oldPrice != '0'">{{ oldPrice }}</div>
     </div>
   </div>
 </template>
@@ -114,9 +118,11 @@ export default {
   .newprice {
     color: red;
     font-weight: bolder;
+    display: inline-block;
   }
   .oldprice {
     text-decoration: line-through;
+    display: inline-block;
   }
 }
 </style>

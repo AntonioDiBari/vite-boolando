@@ -24,7 +24,11 @@ export default {
       <div class="social">
         <span class="find-us">Trovaci anche su</span>
         <div class="ads">
-          <i v-for="logo in adsLogos" :class="logo"></i>
+          <font-awesome-icon
+            v-for="logo in adsLogos"
+            :icon="logo"
+            class="logo"
+          />
         </div>
       </div>
     </section>
@@ -54,7 +58,7 @@ export default {
 
 .ads {
   @include flexBetweenCenter();
-  i {
+  .logo {
     font-size: 14px;
     margin: 0px 3px 0 3px;
     cursor: pointer;

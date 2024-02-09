@@ -21,7 +21,9 @@ export default {
         </ul>
         <div class="logo"><img src="/boolean-logo.png" alt="" /></div>
         <ul class="buttons">
-          <li v-for="button in buttons"><i :class="button"></i></li>
+          <li v-for="button in buttons">
+            <font-awesome-icon :icon="button" />
+          </li>
         </ul>
       </div>
     </header>

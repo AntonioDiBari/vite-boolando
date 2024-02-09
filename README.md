@@ -48,6 +48,25 @@ src
 - @import "bootstrap/scss/bootstrap"; nel general.scss (dato che in app.vue lo abbiamo già linkato)
 - import \* as bootstrap from "bootstrap"; nel main.js per la logica di bootstrap
 
+## Install FontAwesome
+
+- npm i --save @fortawesome/fontawesome-svg-core
+- npm i --save @fortawesome/free-solid-svg-icons //// i --save @fortawesome/free-regular-svg-icons //// i --save @fortawesome/free-brands-svg-icons
+- npm i --save @fortawesome/vue-fontawesome@latest-3
+- Aggiungi nel main:
+  - /_ import the fontawesome core _/
+    import { library } from "@fortawesome/fontawesome-svg-core";
+  - /_ import font awesome icon component _/
+    import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+  - /_ import specific icons _/
+    import {fa..} from "@fortawesome/free-regular-svg-icons";
+    import {} from "@fortawesome/free-solid-svg-icons";
+    import {} from "@fortawesome/free-brands-svg-icons";
+  - /_ add icons to the library _/
+    library.add(fa..);
+- Aggiungi nel main al createApp: app.component("font-awesome-icon", FontAwesomeIcon); (staccando magari app dal .mount)
+- Per aggiungere cercare la sintassi che preferisci sull'icon scelta nella sezione VUE
+
 ## GIORNO 1
 
 - Descrizione
