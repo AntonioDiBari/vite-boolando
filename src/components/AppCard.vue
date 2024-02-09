@@ -21,6 +21,7 @@ export default {
     nameArticle: String,
     newPrice: String,
     oldPrice: String,
+    heart: Boolean,
   },
 };
 </script>
@@ -29,7 +30,8 @@ export default {
   <div class="cards">
     <img :src="getUrl(urlImageHover)" alt="" class="second-img" />
     <img :src="getUrl(urlImage)" alt="" class="first-img" />
-    <span class="hearts">&hearts;</span>
+    <span class="hearts" v-if="heart"><i class="fa-solid fa-heart"></i></span>
+    <span class="hearts" v-else><i class="fa-regular fa-heart"></i></span>
     <div class="tags">
       <div v-for="badge in badges" :class="badge.type">
         {{ badge.value }}

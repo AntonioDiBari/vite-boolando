@@ -118,6 +118,7 @@ export default {
         :nameArticle="card.nameArticle"
         :newPrice="card.newPrice"
         :oldPrice="card.oldPrice"
+        :heart="card.isInFavorites"
       />
     </section>
   </main>
