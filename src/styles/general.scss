@@ -1,5 +1,6 @@
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
+@import "bootstrap/scss/bootstrap";
 
 /* ## RESET */
 * {
@@ -24,8 +25,15 @@ body {
   margin: 0 auto;
   width: 75%;
   height: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 li {
   list-style-type: none;
+}
+
+ul {
+  margin-bottom: 0;
+  padding-left: 0;
 }

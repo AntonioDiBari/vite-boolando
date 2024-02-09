@@ -42,6 +42,12 @@ src
 6. importa i file parziali nel file `general.scss`. <br>
    Dovrai usare la direttiva `@use` ed aggiungere `as *`
 
+## Install Bootstrap
+
+- npm i --save bootstrap @popperjs/core
+- @import "bootstrap/scss/bootstrap"; nel general.scss (dato che in app.vue lo abbiamo già linkato)
+- import \* as bootstrap from "bootstrap"; nel main.js per la logica di bootstrap
+
 ## GIORNO 1
 
 - Descrizione
@@ -51,3 +57,17 @@ src
 
 - Bonus
   Popoliamo le voci dell'header (sia le tre voci testuali che le tre icone) dinamicamente.
+
+## GIORNO 2
+
+- Descrizione
+  Continuate a lavorare nella stessa repo di ieri.
+  Milestone 1
+  Create un componente Card predisposto per ricevere dall'esterno le informazioni necessarie alla visualizzazione dei propri elementi (con le props).
+  Potete testarlo stampando una singola Card con informazioni statiche.
+  Milestone 2
+  (Se non lo avete già fatto) definite un array di prodotti nel componente AppMain. Potete prendere spunto dall'array allegato o usarlo direttamente così com'è. Iterate sull'array di prodotti e per ognuno di essi create un componente Card, inviando le informazioni necessarie alla visualizzazione.
+- Bonus
+  Facciamo in modo che il cuore nella card del prodotto sia colorato o vuoto a seconda del valore della proprietà "isInFavourites".
+- Bonus 2
+  Spostate i menu dinamici dai componenti AppHeader e AppFooter al componente App. Inviateglieli poi tramite props.

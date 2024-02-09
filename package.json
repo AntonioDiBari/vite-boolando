@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "fontawesome": "^5.6.3",
+    "bootstrap": "^5.3.2",
     "vue": "^3.4.15"
   },
   "devDependencies": {
