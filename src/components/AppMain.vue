@@ -32,7 +32,7 @@ export default {
         :oldPrice="card.oldPrice"
         :heart="card.isInFavorites"
         :id="card.id"
-        :indexCard="indexCard + 1"
+        :indexCard="indexCard"
         @show-product="handleMainClick"
       />
     </section>

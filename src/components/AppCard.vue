@@ -88,22 +88,7 @@ export default {
   }
 }
 
-.tags {
-  position: absolute;
-  bottom: 30px;
-
-  .sconto,
-  .tag {
-    @include badgeStructure();
-  }
-  .sconto {
-    background-color: red;
-    margin-right: 5px;
-  }
-  .tag {
-    background-color: green;
-  }
-}
+@include tagsStructure();
 
 .info {
   position: absolute;

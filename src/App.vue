@@ -94,7 +94,7 @@ export default {
       //     discount: "0",
       //     brand: "Maya Deluxe",
       //     nameArticle: "STRIPE BODICE",
-      //     newPrice: "99,99€;",
+      //     newPrice: "99,99€",
       //     oldPrice: "0",
       //     isInFavorites: true,
       //     // badges: [],
@@ -104,7 +104,7 @@ export default {
       //     imageHover: "6b.webp",
       //     brand: "Esprit",
       //     nameArticle: "MAGLIONE - BLACK",
-      //     newPrice: "29,99€;",
+      //     newPrice: "29,99€",
       //     oldPrice: "0",
       //     isInFavorites: true,
       //     badges: [
