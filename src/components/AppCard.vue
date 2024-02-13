@@ -22,7 +22,9 @@ export default {
     newPrice: String,
     oldPrice: String,
     heart: Boolean,
+    id: String,
   },
+  emits: ["show-product"],
 };
 </script>
 
@@ -43,7 +45,7 @@ export default {
     </div>
     <div class="info">
       <div class="brand">{{ brand }}</div>
-      <div class="nome">{{ nameArticle }}</div>
+      <div @click="$emit('show-product')" class="nome">{{ nameArticle }}</div>
       <div class="newprice me-1">{{ newPrice }}</div>
       <div class="oldprice" v-show="oldPrice != '0'">{{ oldPrice }}</div>
     </div>
@@ -105,6 +107,7 @@ export default {
   .brand,
   .nome {
     display: block;
+    cursor: pointer;
   }
   .brand,
   .newprice,

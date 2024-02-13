@@ -9,6 +9,7 @@ export default {
     cards: Array,
   },
   components: { AppCard },
+  emits: ["show-product-main"],
 };
 </script>
 
@@ -25,6 +26,8 @@ export default {
         :newPrice="card.newPrice"
         :oldPrice="card.oldPrice"
         :heart="card.isInFavorites"
+        :id="card.id"
+        @show-product="$emit('show-product-main')"
       />
     </section>
   </main>

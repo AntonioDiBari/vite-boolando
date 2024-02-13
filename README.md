@@ -67,43 +67,30 @@ src
 - Aggiungi nel main al createApp: app.component("font-awesome-icon", FontAwesomeIcon); (staccando magari app dal .mount)
 - Per aggiungere cercare la sintassi che preferisci sull'icon scelta nella sezione VUE
 
-## GIORNO 1
+## Mocking API (json-server)
 
-- Descrizione
-  Create un nuovo progetto utilizzando Vite e Vue 3 e definite i componenti necessari per strutturare il layout.
-  Non esagerate con i componenti: less is more.
-  L'esercizio già lo conoscete (html-css-boolando), ma la sfida è suddividerlo in componenti e provare a sfruttare SASS per rendere il nostro stile più leggibile e flessibile (di quali variabili potreste avere bisogno?).
+- npm install json-server
+- creata la cartella db in src, ci aggiungiamo il file index.json
+- npx json-server ./src/db/index.json
+- mettere l'indirizzo del file index.json popolato con un database (avrà sempre id) provvisorio da cui fare chiamate asincrone
+- Questo comando sopra apre il canale di ascolto verso questo file .json, solo dopo le richieste su Postman funzioneranno
+- Copio il link della richiesta che mi serve e la richiamo con Axios
 
-- Bonus
-  Popoliamo le voci dell'header (sia le tre voci testuali che le tre icone) dinamicamente.
+## Install Axios
 
-## GIORNO 2
+- npm i axios
+- import axios from 'axios'; /// In OGNI componente dove ci servirà va importato così
+- axios.get(LINK CHIAMATA).then((response) => {
+  myArray = response.data;});
 
-- Descrizione
-  Continuate a lavorare nella stessa repo di ieri.
-  Milestone 1
-  Create un componente Card predisposto per ricevere dall'esterno le informazioni necessarie alla visualizzazione dei propri elementi (con le props).
-  Potete testarlo stampando una singola Card con informazioni statiche.
-  Milestone 2
-  (Se non lo avete già fatto) definite un array di prodotti nel componente AppMain. Potete prendere spunto dall'array allegato o usarlo direttamente così com'è. Iterate sull'array di prodotti e per ognuno di essi create un componente Card, inviando le informazioni necessarie alla visualizzazione.
-- Bonus
-  Facciamo in modo che il cuore nella card del prodotto sia colorato o vuoto a seconda del valore della proprietà "isInFavourites".
-- Bonus 2
-  Spostate i menu dinamici dai componenti AppHeader e AppFooter al componente App. Inviateglieli poi tramite props.
+# Global State
 
-## GIORNO 3
-
-- MOCKING API
-  Installate la libreria json-server
-  Mettete in un file .json la struttura dati dei prodotti (vedi allegato - se non ne avete una ad hoc potete usarlo direttamente)
-  Fate partire il server delle mocking API
-  Testate il server e recuperate l'indirizzo che vi restituisce la lista dei prodotti
-  Chiamatelo via axios e stampare in pagina i prodotti presi dalla API
-  di seguito i link per l'installazione dei pacchetti necessari
-  https://www.npmjs.com/package/json-server
-  https://www.npmjs.com/package/axios
-- GLOBAL STATE
-  Realizzare un file "store" come visto in classe / come descritto dalla DOC di Vue
-  Usarlo per conservare ed utilizzare l'endpoint base (localhost:3000)
-  -BONUS
-  Aggiungere al global state (store) anche la lista di prodotti recuperata dal JSON Server ed utilizzarla durante la stampa
+- creata la cartella store in src, ci aggiungiamo il file index.js
+- incolliamo :
+  - import { reactive } from 'vue'
+  - export const store = reactive({DATA reattivi e globali})
+- nel componente dove vorremo avere accesso ai DATA in global state dovremo importare:
+  - import { store } from "./store/index";
+  - dichiararlo nel return di data semplicemente con store
+  - ora avremo accesso reattivamente ai DATA globali, non si usa il this.store per richiamare ma basta store. Anche se lo abbiamo dichiarato nei data
+    avremo accesso comunque, invece se usassimo il this. perderemmo la reattività di VUE

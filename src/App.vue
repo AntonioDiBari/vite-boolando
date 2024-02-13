@@ -4,6 +4,7 @@ import { store } from "./store/index";
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
 import AppFooter from "./components/AppFooter.vue";
+import AppModal from "./components/AppModal.vue";
 
 export default {
   data() {
@@ -130,6 +131,9 @@ export default {
     };
   },
   methods: {
+    handleClick() {
+      alert("Hai cliccato un titolo di un prod");
+    },
     fetchCards() {
       axios.get(`${store.fetchCardsURI}/cards`).then((response) => {
         store.cards = response.data;
@@ -140,13 +144,14 @@ export default {
     this.fetchCards();
   },
 
-  components: { AppHeader, AppMain, AppFooter },
+  components: { AppHeader, AppMain, AppFooter, AppModal },
 };
 </script>
 
 <template>
   <AppHeader :sizeGenders="sizeGenders" :buttons="buttons"></AppHeader>
-  <AppMain :cards="store.cards"></AppMain>
+  <AppModal v-if="store.modal.show"></AppModal>
+  <AppMain :cards="store.cards" @show-product-main="handleClick()"></AppMain>
   <AppFooter :footLinks="footLinks" :adsLogos="adsLogos"></AppFooter>
 </template>
 
