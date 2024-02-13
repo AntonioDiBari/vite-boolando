@@ -18,6 +18,7 @@ import {
 import {
   faHeart as fasFaHeart,
   faBagShopping,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faHeart as farFaHeart,
@@ -33,7 +34,8 @@ library.add(
   faSquareFacebook,
   faSquareInstagram,
   faSquarePinterest,
-  faSquareYoutube
+  faSquareYoutube,
+  faXmark
 );
 
 import App from "./App.vue";

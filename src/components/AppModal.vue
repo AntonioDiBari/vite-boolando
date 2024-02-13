@@ -1,14 +1,28 @@
 <script>
+import { store } from "../store/index.js";
 export default {
   data() {
-    return {};
+    return { store };
+  },
+  methods: {
+    closeModal() {
+      store.modal.show = false;
+    },
   },
 };
 </script>
 
 <template>
   <div class="layover">
-    <h1 class="modale card">MODALE</h1>
+    <div class="modale card">
+      {{ store.modal.brand }}
+
+      <font-awesome-icon
+        @click="closeModal()"
+        icon="fa-solid fa-xmark"
+        class="close-win"
+      />
+    </div>
   </div>
 </template>
 
@@ -27,9 +41,17 @@ export default {
   justify-content: center;
   align-items: center;
   .modale {
-    width: 500px;
-    height: 400px;
+    position: relative;
+    width: 200px;
+    height: 200px;
     font-size: 2rem;
+  }
+  .close-win {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 1rem;
   }
 }
 </style>

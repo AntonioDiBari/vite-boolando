@@ -23,6 +23,7 @@ export default {
     oldPrice: String,
     heart: Boolean,
     id: String,
+    indexCard: Number,
   },
   emits: ["show-product"],
 };
@@ -45,7 +46,9 @@ export default {
     </div>
     <div class="info">
       <div class="brand">{{ brand }}</div>
-      <div @click="$emit('show-product')" class="nome">{{ nameArticle }}</div>
+      <div @click="$emit('show-product', this.indexCard)" class="nome">
+        {{ nameArticle }}
+      </div>
       <div class="newprice me-1">{{ newPrice }}</div>
       <div class="oldprice" v-show="oldPrice != '0'">{{ oldPrice }}</div>
     </div>

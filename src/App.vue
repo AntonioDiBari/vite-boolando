@@ -131,8 +131,13 @@ export default {
     };
   },
   methods: {
-    handleClick() {
-      alert("Hai cliccato un titolo di un prod");
+    handleAppClick(indexCard) {
+      store.modal.show = true;
+      store.modal.image = store.cards[indexCard].image;
+      store.modal.brand = store.cards[indexCard].brand;
+      store.modal.nameArticle = store.cards[indexCard].nameArticle;
+      store.modal.price = store.cards[indexCard].newPrice;
+      store.modal.badges = store.cards[indexCard].badges;
     },
     fetchCards() {
       axios.get(`${store.fetchCardsURI}/cards`).then((response) => {
@@ -151,7 +156,7 @@ export default {
 <template>
   <AppHeader :sizeGenders="sizeGenders" :buttons="buttons"></AppHeader>
   <AppModal v-if="store.modal.show"></AppModal>
-  <AppMain :cards="store.cards" @show-product-main="handleClick()"></AppMain>
+  <AppMain :cards="store.cards" @show-product-main="handleAppClick"></AppMain>
   <AppFooter :footLinks="footLinks" :adsLogos="adsLogos"></AppFooter>
 </template>
 

@@ -5,5 +5,10 @@ export const store = reactive({
   cards: [],
   modal: {
     show: false,
+    image: "",
+    brand: "",
+    nameArticle: "",
+    price: "",
+    badges: {},
   },
 });

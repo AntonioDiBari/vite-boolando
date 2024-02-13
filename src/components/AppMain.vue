@@ -5,6 +5,11 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    handleMainClick(indexCard) {
+      this.$emit("show-product-main", indexCard);
+    },
+  },
   props: {
     cards: Array,
   },
@@ -17,7 +22,7 @@ export default {
   <main>
     <section class="container vetrina">
       <app-card
-        v-for="card in cards"
+        v-for="(card, indexCard) in cards"
         :urlImageHover="card.imageHover"
         :urlImage="card.image"
         :badges="card.badges"
@@ -27,7 +32,8 @@ export default {
         :oldPrice="card.oldPrice"
         :heart="card.isInFavorites"
         :id="card.id"
-        @show-product="$emit('show-product-main')"
+        :indexCard="indexCard + 1"
+        @show-product="handleMainClick"
       />
     </section>
   </main>
